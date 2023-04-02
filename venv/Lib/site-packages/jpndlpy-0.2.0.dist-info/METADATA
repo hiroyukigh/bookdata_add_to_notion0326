@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: jpndlpy
+Version: 0.2.0
+Summary: requests wrapper library for obtaining book information from the Japan National Diet Library.
+Home-page: https://github.com/shimakaze-git/jpndlpy
+Author: shimakaze-git
+Author-email: shimakaze.soft@gmail.com
+License: BSD 2-Clause 
+Keywords: python requests
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.4, !=2.7.*
+Description-Content-Type: text/markdown
+Requires-Dist: requests (>=2.20.0)
+Requires-Dist: marshmallow (==2.16.3)
+Requires-Dist: xmltodict (==0.12.0)
+
+Jpndlpy: HTTP Client for the Japan National Diet Library API.
+========
+[![image](https://img.shields.io/pypi/v/jpndlpy.svg)](https://pypi.org/project/jpndlpy/)
+[![image](https://img.shields.io/pypi/l/jpndlpy.svg)](https://pypi.org/project/jpndlpy/)
+[![image](https://img.shields.io/pypi/pyversions/jpndlpy.svg)](https://pypi.org/project/jpndlpy/)
+
+**jpndlpy is a requests wrapper library for obtaining book information from the Japan National Diet Library.**
+
+
+## Description
+
+jpndlpy is gets information from opensearch provided by the Japan National Diet Library, and The obtained data is converted to json format.
+
+Installation
+------------
+
+How to install jpndlpy
+
+``` {.sourceCode .bash}
+$ python setup.py install
+```
+
+```bash
+$ pip3 install jpndlpy
+```
+
+Usage
+------------
+
+How to Use
+
+sample code
+
+``` python
+jndlclient = JapanNdlClient()
+# jndlclient.search_text(title="test", cnt=1, from_date="2018-1*22", until_date="tee")
+# jndlclient.search_text(title="test", cnt=1, from_date="2018-1-22")
+response = jndlclient.search_text(title="python", cnt=2)
+
+print(response.to_json())
+```
+
+Documentation
+-------------
+
+- [japnese README](./README.ja.md)
+
+
+- Api document: http://iss.ndl.go.jp/information/api/
+- NDC: http://www.libnet.pref.okayama.jp/shiryou/ndc/
+
+
+Licence
+-------------
+
+[BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
+
+
